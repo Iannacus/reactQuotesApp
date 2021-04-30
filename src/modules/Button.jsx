@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Button({ content }) {
-    console.log(content)
+    const [link, setLink] = useState('https://twitter.com/intent/tweet?text=')
     if (content === 'fab fa-twitter') {
         return (
-            <div className="btn">
+            <a
+                onClick={e => {
+                    const regex = / +/gi;
+                    if (e.target.classList.contains("btn")) {
+                        const textQuote = e.target.parentElement.previousElementSibling.textContent.trim(' ').replace(regex, '%20');
+                        setLink('https://twitter.com/intent/tweet?text=' + textQuote);
+                        console.log(e.target.parentElement.previousElementSibling.textContent);
+                    }
+
+                }}
+                href={link} target="__BLANK" className="btn glass-btn">
                 <i className={content}></i>
-            </div>
+            </a>
         );
     } else {
         return (
-            <div className="btn">
+            <button className="btn glass-btn">
                 {content}
-            </div>
+            </button>
         );
     }
 
@@ -20,3 +30,4 @@ function Button({ content }) {
 }
 
 export default Button;
+

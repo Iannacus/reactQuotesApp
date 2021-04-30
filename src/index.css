@@ -11,7 +11,8 @@ body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: salmon;
+  background-color: rgb(241, 158, 80);
+  color: white;
 }
 
 blockquote {
@@ -26,4 +27,17 @@ p {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
+button {
+  border: none;
+  color: white;
 }

@@ -6,42 +6,26 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.glass {
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 4px 4px 11px 4px rgba(51,51,51,0.3);
+  border-radius: 0.5rem;
+}
+
+.glass-btn {
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 0 4px 7px 3px rgba(51,51,51,0.3);
+}
+
+.glass-border {
+   border-top: solid 1px rgba(255, 255, 255, 0.4);
+  border-left: solid 1px rgba(255, 255, 255, 0.4);
 }
 
 .card{
@@ -49,7 +33,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #FFA0FD;
   width: 60%;
   border-radius: 25px;
   padding: 40px 0;
@@ -59,10 +42,10 @@
   font-size: 48px;
 }
 
+
 .btn {
   font-size: 16px;
   padding: 10px 20px;
-  background-color: black;
   border-radius: 7px;
   transform: scale(1);
   transition: 0.3s;
@@ -82,6 +65,7 @@
 
 .text-quote {
   margin-bottom: 20px;
+  text-shadow: 0 4px 7px  rgba(51,51,51,0.7);;
 }
 
 .buttonContainer {
