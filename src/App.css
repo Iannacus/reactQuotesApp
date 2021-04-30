@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .App-logo {
@@ -14,7 +21,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +42,53 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFA0FD;
+  width: 60%;
+  border-radius: 25px;
+  padding: 40px 0;
+}
+
+.card span {
+  font-size: 48px;
+}
+
+.btn {
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: black;
+  border-radius: 7px;
+  transform: scale(1);
+  transition: 0.3s;
+}
+
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+  transition: 0.3s;
+}
+
+.quoteAuthor {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+}
+
+.text-quote {
+  margin-bottom: 20px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.quoteContaianer {
+  width: 80%;
 }
