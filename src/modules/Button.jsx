@@ -17,8 +17,8 @@ function Button({ content, setValue, value }) {
     } else {
         return (
             <button
-                onClick={() => {
-                    setValue();
+                onClick={e => {
+                    setValue(e);
                 }}
                 className="btn glass-btn">
                 {content}

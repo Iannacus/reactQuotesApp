@@ -5,10 +5,8 @@ import Button from './Button'
 
 const quotesArray = quotes.quotes;
 const colors = ['#28ABDE', '#DD27AA', '#9727DD', '#DD3C27', '#DDB627', '#DE2846', '#B8DD17', '#F19E50'];
-const bgcolor = document.getElementsByClassName('App')[0];
-
 function QuoteContainer() {
-    const [quote, setQuote] = useState(getQuote(quotesArray));
+    const [quote, setQuote] = useState(getRandom(quotesArray));
     const [link, setLink] = useState('https://twitter.com/intent/tweet?text=')
     const [bgColor, setBgColor] = useState('#9727DD');
 
@@ -28,14 +26,14 @@ function QuoteContainer() {
         url = 'https://twitter.com/intent/tweet?text=' + url.trim(' ').replace(regex, '%20');
         setLink(url);
     }
-    const handdleQuote = () => {
+    const handdleQuote = (e) => {
         setQuote(getRandom(quotesArray));
-        handdleBgColor();
+        handdleBgColor(e);
     }
 
-    const handdleBgColor = () => {
+    const handdleBgColor = (e) => {
         setBgColor(getRandom(colors));
-        bgcolor.style.background = bgColor;
+        e.target.parentElement.parentElement.parentElement.parentElement.style.background = bgColor;
     }
 
     return (
