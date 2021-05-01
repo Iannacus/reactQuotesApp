@@ -4,31 +4,38 @@ import quotes from './quotes'
 import Button from './Button'
 
 const quotesArray = quotes.quotes;
+const colors = ['#28ABDE', '#DD27AA', '#9727DD', '#DD3C27', '#DDB627', '#DE2846', '#B8DD17', '#F19E50'];
+const bgcolor = document.getElementsByClassName('App')[0];
 
 function QuoteContainer() {
     const [quote, setQuote] = useState(getQuote(quotesArray));
     const [link, setLink] = useState('https://twitter.com/intent/tweet?text=')
+    const [bgColor, setBgColor] = useState('#9727DD');
 
-    //Obtener una cita aleatoria 
-    function getQuote(quotesArray) {
-        const quoteIndex = Math.trunc(Math.random(quotes) * 102) - 1;
-        return quotesArray[quoteIndex];
-    };
+    //Obtener una elemento aleatorio de un array
+    function getRandom(array) {
+        const index = Math.trunc(Math.random(array) * array.length);
+        return array[index];
+    }
 
     const handdleLink = (e) => {
         let url = '';
         const regex = / +/gi;
+        //Obtener el texto de la cita en el elemeneto blockQuote usando el evento del booton Twitter
         e.target.classList.contains('btn') ? url = e.target.parentElement.previousElementSibling.textContent :
             url = e.target.parentElement.parentElement.previousElementSibling.textContent;
+        //se crea la url uniendo la base de la url y se formateea el texto obtenido anteriormete rellenando espacios con %20
         url = 'https://twitter.com/intent/tweet?text=' + url.trim(' ').replace(regex, '%20');
         setLink(url);
     }
     const handdleQuote = () => {
-        setQuote(getQuote(quotesArray));
+        setQuote(getRandom(quotesArray));
+        handdleBgColor();
     }
 
     const handdleBgColor = () => {
-
+        setBgColor(getRandom(colors));
+        bgcolor.style.background = bgColor;
     }
 
     return (
