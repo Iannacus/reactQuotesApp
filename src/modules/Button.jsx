@@ -1,27 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function Button({ content }) {
-    const [link, setLink] = useState('https://twitter.com/intent/tweet?text=')
+function Button({ content, setValue, value }) {
+
     if (content === 'fab fa-twitter') {
+
         return (
             <a
                 onClick={e => {
-                    let textQuote = '';
-                    const regex = / +/gi;
-                    e.target.classList.contains("btn") ?
-                        textQuote = e.target.parentElement.previousElementSibling.textContent.trim(' ').replace(regex, '%20') :
-                        textQuote = e.target.parentElement.parentElement.previousElementSibling.textContent.trim(' ').replace(regex, '%20');
-                    setLink('https://twitter.com/intent/tweet?text=' + textQuote);
-
+                    console.log(e.target.classList.contains('btn'));
+                    setValue(e);
                 }}
-                href={link} target="__BLANK" className="btn glass-btn">
+                href={value} target="BLANK" className="btn glass-btn">
                 <i className={content}></i>
             </a>
         );
     } else {
         return (
             <button
-
+                onClick={() => {
+                    setValue();
+                }}
                 className="btn glass-btn">
                 {content}
             </button>
