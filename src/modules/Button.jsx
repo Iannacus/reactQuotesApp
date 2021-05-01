@@ -6,12 +6,12 @@ function Button({ content }) {
         return (
             <a
                 onClick={e => {
+                    let textQuote = '';
                     const regex = / +/gi;
-                    if (e.target.classList.contains("btn")) {
-                        const textQuote = e.target.parentElement.previousElementSibling.textContent.trim(' ').replace(regex, '%20');
-                        setLink('https://twitter.com/intent/tweet?text=' + textQuote);
-                        console.log(e.target.parentElement.previousElementSibling.textContent);
-                    }
+                    e.target.classList.contains("btn") ?
+                        textQuote = e.target.parentElement.previousElementSibling.textContent.trim(' ').replace(regex, '%20') :
+                        textQuote = e.target.parentElement.parentElement.previousElementSibling.textContent.trim(' ').replace(regex, '%20');
+                    setLink('https://twitter.com/intent/tweet?text=' + textQuote);
 
                 }}
                 href={link} target="__BLANK" className="btn glass-btn">
@@ -20,7 +20,9 @@ function Button({ content }) {
         );
     } else {
         return (
-            <button className="btn glass-btn">
+            <button
+
+                className="btn glass-btn">
                 {content}
             </button>
         );

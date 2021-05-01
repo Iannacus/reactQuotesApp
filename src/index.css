@@ -11,7 +11,7 @@ body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(241, 158, 80);
+  background-color: #9727DD;
   color: white;
 }
 
@@ -31,6 +31,7 @@ code {
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 a:visited {
@@ -39,5 +40,6 @@ a:visited {
 
 button {
   border: none;
+  outline: none;
   color: white;
 }
