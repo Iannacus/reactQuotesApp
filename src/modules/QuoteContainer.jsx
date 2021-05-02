@@ -4,7 +4,7 @@ import quotes from './quotes'
 import Button from './Button'
 
 const quotesArray = quotes.quotes;
-const colors = ['#28ABDE', '#DD27AA', '#9727DD', '#DD3C27', '#DDB627', '#DE2846', '#B8DD17', '#F19E50'];
+const colors = ['#264653', '#4E8098', '#FC440F', '#1F01B9', '#5D737E', '#473144', '#DF9B6D', '#462749', '#28ABDE', '#DD27AA', '#9727DD', '#DD3C27', '#DDB627', '#DE2846', '#B8DD17', '#F19E50'];
 
 function QuoteContainer() {
     const [quote, setQuote] = useState(getRandom(quotesArray));
@@ -25,7 +25,7 @@ function QuoteContainer() {
             url = e.target.parentElement.parentElement.previousElementSibling.textContent;
 
         //create a twitter url join base url with a formated text getting previously and fill blank spaces with "%20"
-        url = 'https://twitter.com/intent/tweet?text=' + url.trim(' ').replace(regex, '%20');
+        url = 'https://twitter.com/intent/tweet?text=' + url.trim(' ').replace(regex, '%20') + '&hashtags=randomQuotes,reactApp';
         setLink(url);
     }
     const handdleQuote = (e) => {
