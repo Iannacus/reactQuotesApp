@@ -7,7 +7,6 @@ function Button({ content, setValue, value }) {
         return (
             <a
                 onClick={e => {
-                    console.log(e.target.classList.contains('btn'));
                     setValue(e);
                 }}
                 href={value} target="BLANK" className="btn glass-btn">
